@@ -1,0 +1,15 @@
+<section class="chatroom-component">
+  <ul id="nav-mobile" class="side-nav fixed" style="transform: translateX(0%);">
+    <li class="logo">
+      <a id="logo-container" href="#" class="brand-logo">
+        <b>Chatrooms</b>
+      </a>
+    </li>
+    <li>
+      <input placeholder="Add chatroom" (keydown)="create($event)" [(ngModel)]='chatRoom'/>
+    </li>
+    <li class="bold" *ngFor="let chatRoom of chatRooms | async">
+      <a href="#" class="waves-effect waves-teal">{{chatRoom.name}}</a>
+    </li>
+  </ul>
+</section>
