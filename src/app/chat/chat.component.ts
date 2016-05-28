@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import {NewChatComponent} from '../new-chat/new-chat.component';
 import {ChatListComponent} from '../chat-list/chat-list.component';
 
@@ -10,7 +10,8 @@ import {ChatListComponent} from '../chat-list/chat-list.component';
   directives: [NewChatComponent, ChatListComponent]
 })
 export class ChatComponent implements OnInit {
-
+  @Input() chatRoom: Object;
+  
   constructor() {
 
   }

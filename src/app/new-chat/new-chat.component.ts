@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 
 @Component({
@@ -8,6 +8,8 @@ import {AngularFire, FirebaseListObservable} from 'angularfire2';
   styleUrls: ['new-chat.component.css']
 })
 export class NewChatComponent implements OnInit {
+  @Input() chatRoom: Object;
+  
   private newMessage: string;
   chats: FirebaseListObservable<any[]>;
 
@@ -20,7 +22,11 @@ export class NewChatComponent implements OnInit {
 
   send() {
     if (this.newMessage) {
-      this.chats.push({message: this.newMessage});
+      this.chats.push({
+        message: this.newMessage,
+        chatRoomId: this.chatRoom['$key'],
+        createdAt: new Date()
+      });
       this.newMessage = '';
     }
   }

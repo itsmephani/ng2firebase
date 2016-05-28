@@ -8,8 +8,9 @@
     <li>
       <input placeholder="Add chatroom" (keydown)="create($event)" [(ngModel)]='chatRoom'/>
     </li>
-    <li class="bold" *ngFor="let chatRoom of chatRooms | async">
-      <a href="#" class="waves-effect waves-teal">{{chatRoom.name}}</a>
+    <li class="bold" [class.active]='selectedChatRoom==chatRoom' *ngFor="let chatRoom of chatRooms | async">
+      <a href="#" class="waves-effect waves-teal" (click)="onSelected(chatRoom)">{{chatRoom.name}}</a>
     </li>
   </ul>
+  <chat [chatRoom]='selectedChatRoom'></chat>
 </section>

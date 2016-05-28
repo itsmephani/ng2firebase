@@ -1,0 +1,10 @@
+.new-chat-component {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+
+.new-chat-component .send {
+  position: relative;
+  top: 10px;
+}

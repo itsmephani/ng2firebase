@@ -1,6 +1,7 @@
 <section class="chat-component">
   <div class="container">
-    <chat-list></chat-list>
-    <new-chat></new-chat>
+    <h5>{{chatRoom?.name}}</h5>
+    <chat-list [chatRoom]='chatRoom'></chat-list>
+    <new-chat [chatRoom]='chatRoom'></new-chat>
   </div>
 </section>

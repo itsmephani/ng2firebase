@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, SimpleChange, OnChanges } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
@@ -7,15 +7,28 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
   templateUrl: 'chat-list.component.html',
   styleUrls: ['chat-list.component.css']
 })
-export class ChatListComponent implements OnInit {
-
+export class ChatListComponent implements OnInit, OnChanges {
+  @Input() chatRoom: Object;
+  
   chats: FirebaseListObservable<any[]>;
 
-  constructor(af: AngularFire) {
-    this.chats = af.database.list('/chats');
+  constructor(private af: AngularFire) {
+    
   }
 
   ngOnInit() {
+  }
+  
+  ngOnChanges(changes: {[propertyName: string]: SimpleChange}) {
+    console.log('here')
+    if (this.chatRoom) {
+      this.chats = this.af.database.list('/chats', {
+        query: {
+          orderByChild: 'chatRoomId',
+          equalTo: this.chatRoom['$key']
+        }
+      });
+    }
   }
 
 }
