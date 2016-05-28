@@ -20,7 +20,6 @@ export class ChatListComponent implements OnInit, OnChanges {
   }
   
   ngOnChanges(changes: {[propertyName: string]: SimpleChange}) {
-    console.log('here')
     if (this.chatRoom) {
       this.chats = this.af.database.list('/chats', {
         query: {

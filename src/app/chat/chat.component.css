@@ -1,3 +1,16 @@
 .chat-component {
   padding-left: 240px;
+  background: #FBFBFB;
+  height: 100vh;
+  position: absolute;
+  width: 100%;
+}
+
+.chat-component .no-room {
+  top: 40vh;
+  font-size: 16px;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  color: teal;
 }

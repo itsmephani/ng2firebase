@@ -1,3 +1,36 @@
-.chatroom-component .side-nae {
+.chatroom-component .side-nav {
   background-color: #26A69A;
+  color: white;
+}
+
+.chatroom-component .side-nav.fixed a {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.chatroom-component .side-nav .profile-img {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+}
+
+.chatroom-component .side-nav .profile-email {
+  font-size: 12px;
+  margin-left: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chatroom-component .side-nav.fixed input {
+  border-bottom: 1px solid whitesmoke;
+  padding: 0 5px;  
+}
+
+.chatroom-component .side-nav.fixed input:focus {
+  border-bottom: 1px solid white;
+}
+
+.chatroom-component .side-nav li.active {
+  background-color: rgba(255, 255, 255, 0.2);
 }

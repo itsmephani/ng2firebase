@@ -1,3 +1,4 @@
 <section class="app">
-  <chatroom></chatroom>
+  <login (onUserLoggedIn)='onUserLoggedIn($event)' *ngIf="!loggedIn"></login>
+  <chatroom [currentUser]='currentUser' *ngIf="loggedIn"></chatroom>
 </section>

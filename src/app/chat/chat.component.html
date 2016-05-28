@@ -1,7 +1,11 @@
 <section class="chat-component">
-  <div class="container">
+  <div class="container" [hidden]='!chatRoom'>
     <h5>{{chatRoom?.name}}</h5>
     <chat-list [chatRoom]='chatRoom'></chat-list>
-    <new-chat [chatRoom]='chatRoom'></new-chat>
+    <new-chat [chatRoom]='chatRoom' [currentUser]='currentUser'>
+    </new-chat>
+  </div>
+  <div class="container no-room" [hidden]='chatRoom'>
+    Select a chatroom to start chatting.
   </div>
 </section>

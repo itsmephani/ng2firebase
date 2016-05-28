@@ -2,15 +2,17 @@
   <ul id="nav-mobile" class="side-nav fixed" style="transform: translateX(0%);">
     <li class="logo">
       <a id="logo-container" href="#" class="brand-logo">
-        <b>Chatrooms</b>
+        <img [src]='currentUser?.password?.profileImageURL' class="profile-img"/>
+        <span class="profile-email">{{currentUser?.password?.email}}</span>
       </a>
     </li>
     <li>
       <input placeholder="Add chatroom" (keydown)="create($event)" [(ngModel)]='chatRoom'/>
     </li>
-    <li class="bold" [class.active]='selectedChatRoom==chatRoom' *ngFor="let chatRoom of chatRooms | async">
+    <li [class.active]='selectedChatRoom==chatRoom' *ngFor="let chatRoom of chatRooms | async">
       <a href="#" class="waves-effect waves-teal" (click)="onSelected(chatRoom)">{{chatRoom.name}}</a>
     </li>
   </ul>
-  <chat [chatRoom]='selectedChatRoom'></chat>
+  <chat [chatRoom]='selectedChatRoom' [currentUser]='currentUser'>
+  </chat>
 </section>

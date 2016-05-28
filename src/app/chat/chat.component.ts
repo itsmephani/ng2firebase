@@ -11,6 +11,7 @@ import {ChatListComponent} from '../chat-list/chat-list.component';
 })
 export class ChatComponent implements OnInit {
   @Input() chatRoom: Object;
+  @Input() currentUser: Object;
   
   constructor() {
 

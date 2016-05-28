@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 import { ChatComponent } from '../chat/chat.component';
 
@@ -10,6 +10,7 @@ import { ChatComponent } from '../chat/chat.component';
   directives: [ChatComponent]
 })
 export class ChatroomComponent implements OnInit {
+  @Input() currentUser: Object;
   @Output() onEnterChatRoom = new EventEmitter<void>();
 
   chatRoom: string;

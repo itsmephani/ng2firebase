@@ -15,8 +15,4 @@ describe('App: Ng2firebase', () => {
     expect(app).toBeTruthy();
   }));
 
-  it('should have as title \'ng2firebase works!\'',
-      inject([Ng2firebaseAppComponent], (app: Ng2firebaseAppComponent) => {
-    expect(app.title).toEqual('ng2firebase works!');
-  }));
 });
