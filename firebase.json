@@ -1,0 +1,9 @@
+{
+  "fireabse": "ng2firebase",
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "hosting": {
+    
+  }
+}
